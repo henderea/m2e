@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+Signal.trap('SIGINT') { exit 1 }
+
+require 'yaml'
+require 'thor'
+require 'everyday_thor_util'
+require 'everyday-plugins'
+
+EverydayThorUtil::SubCommandTypes.def_types(:command_ids, :flag, :command, :helper)
+EverydayThorUtil::SubCommandTypes.def_helper(:helper, :print_info)
